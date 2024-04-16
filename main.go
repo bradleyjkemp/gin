@@ -3,9 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
-
-	"github.com/codegangsta/envy/lib"
-	"github.com/codegangsta/gin/lib"
+	gin "github.com/bradleyjkemp/gin/lib"
+	envy "github.com/codegangsta/envy/lib"
 	shellwords "github.com/mattn/go-shellwords"
 	"github.com/urfave/cli"
 
@@ -161,10 +160,7 @@ func MainAction(c *cli.Context) {
 	// Set the PORT env
 	os.Setenv("PORT", appPort)
 
-	wd, err := os.Getwd()
-	if err != nil {
-		logger.Fatal(err)
-	}
+	wd := os.TempDir()
 
 	buildArgs, err := shellwords.Parse(c.GlobalString("buildArgs"))
 	if err != nil {

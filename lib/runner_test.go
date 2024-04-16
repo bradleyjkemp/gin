@@ -7,8 +7,6 @@ import (
 	"runtime"
 	"testing"
 	"time"
-
-	"github.com/codegangsta/gin/lib"
 )
 
 func Test_NewRunner(t *testing.T) {

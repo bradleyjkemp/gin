@@ -5,8 +5,6 @@ import (
 	"path/filepath"
 	"runtime"
 	"testing"
-
-	"github.com/codegangsta/gin/lib"
 )
 
 func Test_Builder_Build_Success(t *testing.T) {
