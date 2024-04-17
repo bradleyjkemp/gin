@@ -203,7 +203,6 @@ func MainAction(c *cli.Context) {
 	// scan for changes
 	scanChanges(c.GlobalString("path"), c.GlobalStringSlice("excludeDir"), all, func(path string) {
 		build(builder, runner, logger)
-		runner.Kill()
 	})
 }
 
